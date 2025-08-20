@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SM GEO Navbar Fixed</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Font Awesome for WhatsApp icon -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    /* body {
+      padding-top: 100px;
+    } */
+
+    .custom-navbar {
+      padding: 25px 0;
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand img {
+      height: 80px;
+    }
+
+    .navbar-nav {
+      gap: 20px;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    @media (min-width: 992px) {
+      .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+        margin-top: 0;
+      }
+    }
+
+    /* Fixed WhatsApp icon bottom-right */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      padding: 10px;
+      font-size: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      text-decoration: none;
+    }
+     /* Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    /* Main Content Initially Hidden */
+    #mainContent {
+      display: none;
+    }
+
+    /* Fullscreen Image Background */
+    .hero-section {
+      background-image: url('img/Banner-3-1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title span {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: #fff;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid #ddd;
+    }
+    .section-title h2 {
+      font-weight: 700;
+      font-size: 32px;
+      margin-top: 15px;
+    }
+    .accordion-button {
+      font-weight: 600;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #fff;
+      color: #000;
+      box-shadow: none;
+    }
+    .accordion-body {
+      color: #6c757d;
+    }
+    /* Scroll to top text */
+    .scroll-text {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: rotate(-90deg) translateX(-50%);
+      transform-origin: left top;
+      font-size: 14px;
+      color: #6c757d;
+      writing-mode: vertical-lr;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top shadow-sm custom-navbar">
+      <div class="container-fluid" id="navbar">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="img/tecalaimg.png" alt="SM GEO Logo" />
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Company</a>
+              <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                <li><a class="dropdown-item" href="mission.html">Mission and Vision</a></li>
+                <li><a class="dropdown-item" href="Research.html">Research & Development</a></li>
+                <li><a class="dropdown-item" href="Team.html">Team</a></li>
+                <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="Shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="buyacc.html">Buy Accessories</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Media</a>
+              <ul class="dropdown-menu" aria-labelledby="mediaDropdown">
+                <li><a class="dropdown-item" href="Gellary.html">Gallery</a></li>
+                <li><a class="dropdown-item" href="Video.html">Video</a></li>
+                <li><a class="dropdown-item" href="new.html">News</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- WhatsApp floating icon -->
+  <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp fa-2x"></i>
+  </a>
+  <main>
+    <!-- Loader -->
+<div id="loader">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent">
+  <div class="hero-section">
+    <!-- <h1 class="hero-title">SM Geo <strong>Whespa</strong></h1>
+    <p class="hero-subtitle">Pure Power. Peak Performance.</p>
+    <p class="hero-tagline">Long Life. Comfortable. Powerful.</p> -->
+  </div>
+ </div>
+ <section class="py-5">
+    <div class="container">
+      <div class="section-title">
+        <span>Common Queries</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              How do electric vehicles work?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Electric vehicles work by using electric motors powered by rechargeable battery packs instead of gasoline engines.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              How much does it cost to fully charge an electric vehicle?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              The cost to fully charge an electric vehicle (EV) varies depending on several factors, including the vehicle’s battery size, the electricity rate, and the efficiency of the charging process.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <footer class="footer"  class="footer mt-5">
+    <div class="container">
+      <div class="row text-start">
+        <div class="col-md-3">
+          <img src="img/tecalaimg.png" alt="Logo" class="img-fluid">
+          <p class="logo-text mt-3">
+            SPVAIG Automobiles Private Limited was set up in 2023 by entrepreneurs who have a passion for the automotive world and technology and they are convinced that the future of mobility is going to be 100% electric.
+          </p>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Company</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="Terms.html">Terms & Condition</a>
+          <a href="Refend.html">Refund & Return Policy</a>
+          <a href="Policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="col-md-3">
+          <h5>Our Products</h5>
+          <a href="#">SM KALKI PRO</a>
+          <a href="#">SM KANAKI PRO</a>
+          <a href="#">SM YAMI PRO (RTO)</a>
+          <a href="#">SM TANK PRO (RTO)</a>
+          <a href="#">SM SUGHOSH PRO</a>
+          <a href="#">SM KAPALI PRO</a>
+          <a href="#">SM PINAAK PRO</a>
+          <a href="#">SM SHESHA PRO</a>
+          <a href="#">SM VIHASA PRO</a>
+          <a href="#">SM KIRAAT PRO</a>
+        </div>
+
+        <div class="col-md-4 contact-info">
+          <h5><i class="bi bi-geo-alt-fill"></i> Corporate Office</h5>
+          <p>Anantpur Ring Road, Phase - 2, Varanasi, Uttar Pradesh-221302, India</p>
+          <p>+91 798 540 8060 (24/7)</p>
+          <p>+91 893 180 9059 (24/7)</p>
+
+          <h5 class="mt-3">Branch Office</h5>
+          <p>Hanumant Tower, B.3/31, Vibhuti Khand, Gomati Nagar, Lucknow, Uttar Pradesh-226010, India</p>
+          <p>+91 8982813478</p>
+
+          <h5 class="mt-3">Send a Message</h5>
+          <p>info@spvaigautomobiles.com</p>
+          <p>legal.adv@spvaigautomobiles.com</p>
+          <p>rakesh@spvaigautomobiles.com</p>
+        </div>
+      </div>
+
+      <div class="copyright mt-4">
+        Copyright 2024 - SPVAIG Pvt Ltd
+      </div>
+    </div>
+  </footer>
+  <script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("mainContent");
+
+    setTimeout(() => {
+      loader.style.display = "none";
+      content.style.display = "block";
+    }, 2000); // 2 seconds loader
+  });
+</script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

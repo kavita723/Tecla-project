@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Font Awesome for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- WhatsApp Icon Style -->
+  <style>
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 12px;
+      font-size: 15px;
+      z-index: 9999;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      color: white;
+      text-decoration: none;
+    }
+    .card-custom {
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    .card-custom img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .card-title-custom {
+      font-weight: bold;
+      font-size: 18px;
+      background-color: #fff;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    .buy-btn {
+      background-color: #004aad;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 20px;
+      font-weight: bold;
+    }
+
+    .buy-btn:hover {
+      background-color: #003080;
+    }
+
+    .filter-box {
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .toggle-filter {
+      color: #004aad;
+      text-decoration: none;
+      cursor: pointer;
+      float: right;
+    }
+
+    .filter-label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    #filterSection {
+  transition: all 0.3s ease;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Fixed Top Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top shadow-sm custom-navbar">
+      <div class="container-fluid" id="navbar">
+        <a class="navbar-brand" href="#">
+          <img src="img/tecalaimg.png" alt="SM GEO Logo" />
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="companyDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Company</a>
+              <ul class="dropdown-menu" aria-labelledby="companyDropdown">
+                <li><a class="dropdown-item" href="mission.html">Mission and Vision</a></li>
+                <li><a class="dropdown-item" href="Research.html">Research & Development</a></li>
+                <li><a class="dropdown-item" href="Team.html">Team</a></li>
+                <li><a class="dropdown-item" href="FAQ.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="Shop.html">Shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="buyacc.html">Buy Accessories</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="mediaDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Media</a>
+              <ul class="dropdown-menu" aria-labelledby="mediaDropdown">
+                <li><a class="dropdown-item" href="Gellary.html">Gallery</a></li>
+                <li><a class="dropdown-item" href="Video.html">Video</a></li>
+                <li><a class="dropdown-item" href="new.html">News</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+   <!-- WhatsApp floating icon -->
+  <a href="https://wa.me/919999999999" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp fa-2x"></i>
+  </a>
+
+
+  <!-- Page Content -->
+  <main class="mt-5 pt-5" style="padding-top: 100px;">
+    <div class="container py-4">
+
+    <!-- Toggle Filter -->
+    <div class="mb-2 text-end">
+      <span class="toggle-filter" onclick="toggleFilter()">⮟ Toggle Filters</span>
+    </div>
+
+    <!-- Filter Section -->
+    <div id="filterSection" class="filter-box" style="display: none;">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="filter-label">Category</label>
+          <select class="form-select" id="categoryFilter" onchange="applyFilter()">
+            <option value="all">All</option>
+            <option value="body">Body Parts</option>
+            <option value="footrest">Footrest</option>
+            <option value="switch">Switches</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="filter-label">Price Range</label>
+          <select class="form-select" id="priceFilter" onchange="applyFilter()">
+            <option value="all">All</option>
+            <option value="low">Below ₹500</option>
+            <option value="mid">₹500 - ₹2000</option>
+            <option value="high">Above ₹2000</option>
+          </select>
+        </div>
+      </div>
+    </div><br><br>
+
+    <!-- Product Cards -->
+    <div class="row g-4 justify-content-center" id="productContainer">
+
+      <!-- Product Card Template -->
+      <div class="col-md-3 product-card" data-category="body" data-price="3200" data-name="Electric Scooter Side Body">
+        <div class="card-custom">
+          <div class="card-title-custom">Electric Scooter Side Body</div>
+          <img src="img/1735627037_prodred.jpg" alt="Product 1">
+          <div class="price">₹ 3200 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 product-card" data-category="body" data-price="1800" data-name="Two Wheeler Electric Scooter Parts">
+        <div class="card-custom">
+          <div class="card-title-custom">Two Wheeler Electric Scooter Parts</div>
+          <img src="img/1735627949_prodred2.png" alt="Product 2">
+          <div class="price">₹ 1800 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 product-card" data-category="footrest" data-price="350" data-name="Ladies Footrest">
+        <div class="card-custom">
+          <div class="card-title-custom">Ladies Footrest</div>
+          <img src="img/1735628457_prod3.jpg" alt="Product 3">
+          <div class="price">₹ 350 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 product-card" data-category="switch" data-price="250" data-name="All Switch 5Pcs">
+        <div class="card-custom">
+          <div class="card-title-custom">All Switch 5Pcs</div>
+          <img src="img/1735628542_prod4.jpg" alt="Product 4">
+          <div class="price">₹ 250 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   <!-- Product Cards -->
+    <div class="row g-4 justify-content-center" id="productContainer">
+
+      <!-- Product Card Template -->
+      <div class="col-md-3 product-card" data-category="body" data-price="3200" data-name="Electric Scooter Side Body">
+        <div class="card-custom">
+          <div class="card-title-custom">Electric Scooter Side Body</div>
+          <img src="img/1735628607_prod5.jpg" alt="Product 1">
+          <div class="price">₹ 3200 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 product-card" data-category="body" data-price="1800" data-name="Two Wheeler Electric Scooter Parts">
+        <div class="card-custom">
+          <div class="card-title-custom">Two Wheeler Electric Scooter Parts</div>
+          <img src="img/1735628681_prod6.jpg" alt="Product 2">
+          <div class="price">₹ 1800 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 product-card" data-category="footrest" data-price="350" data-name="Ladies Footrest">
+        <div class="card-custom">
+          <div class="card-title-custom">Ladies Footrest</div>
+          <img src="img/1735628752_prod7.jpg" alt="Product 3">
+          <div class="price">₹ 350 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3 product-card" data-category="switch" data-price="250" data-name="All Switch 5Pcs">
+        <div class="card-custom">
+          <div class="card-title-custom">All Switch 5Pcs</div>
+          <img src="img/1735628850_prod8.jpg" alt="Product 4">
+          <div class="price">₹ 250 /-*</div>
+          <button class="buy-btn" onclick="buyProduct(this)">Buy Now</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+   
+  </main>
+
+  <footer class="footer mt-5">
+    <!-- Footer Content (unchanged) -->
+      <div class="container">
+      <div class="row text-start">
+        <div class="col-md-4">
+          <img src="img/tecalaimg.png" alt="Logo" class="img-fluid">
+          <p class="logo-text mt-4 fs-6">
+            SPVAIG Automobiles Private Limited was set up in 2023 by entrepreneurs who have a passion for the automotive world and technology and they are convinced that the future of mobility is going to be 100% electric.
+          </p>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Company</h5>
+          <a href="#">Home</a>
+          <a href="#">About Us</a>
+          <a href="Terms.html">Terms & Condition</a>
+          <a href="#">Refund & Return Policy</a>
+          <a href="Policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="col-md-2">
+          <h5>Our Products</h5>
+          <a href="#">SM KALKI PRO</a>
+          <a href="#">SM KANAKI PRO</a>
+          <a href="#">SM YAMI PRO (RTO)</a>
+          <a href="#">SM TANK PRO (RTO)</a>
+          <a href="#">SM SUGHOSH PRO</a>
+          <a href="#">SM KAPALI PRO</a>
+          <a href="#">SM PINAAK PRO</a>
+          <a href="#">SM SHESHA PRO</a>
+          <a href="#">SM VIHASA PRO</a>
+          <a href="#">SM KIRAAT PRO</a>
+        </div>
+
+        <div class="col-md-4 contact-info">
+          <h5><i class="bi bi-geo-alt-fill"></i> Corporate Office</h5>
+          <p>Anantpur Ring Road, Phase - 2, Varanasi, Uttar Pradesh-221302, India</p>
+          <p>+91 798 540 8060 (24/7)</p>
+          <p>+91 893 180 9059 (24/7)</p>
+
+          <h5 class="mt-3">Branch Office</h5>
+          <p>Hanumant Tower, B.3/31, Vibhuti Khand, Gomati Nagar, Lucknow, Uttar Pradesh-226010, India</p>
+          <p>+91 8982813478</p>
+
+          <h5 class="mt-3">Send a Message</h5>
+          <p>info@spvaigautomobiles.com</p>
+          <p>legal.adv@spvaigautomobiles.com</p>
+          <p>rakesh@spvaigautomobiles.com</p>
+        </div>
+      </div>
+
+      <div class="copyright mt-4">
+        Copyright 2024 - SPVAIG Pvt Ltd
+      </div>
+    
+    </div>
+    
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+    
+  <script>
+    function toggleFilter() {
+      const section = document.getElementById('filterSection');
+      section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function applyFilter() {
+      const category = document.getElementById('categoryFilter').value;
+      const priceRange = document.getElementById('priceFilter').value;
+
+      const products = document.querySelectorAll('.product-card');
+      products.forEach(product => {
+        const prodCategory = product.dataset.category;
+        const prodPrice = parseInt(product.dataset.price);
+
+        let categoryMatch = (category === 'all' || prodCategory === category);
+        let priceMatch = false;
+
+        if (priceRange === 'all') priceMatch = true;
+        else if (priceRange === 'low' && prodPrice < 500) priceMatch = true;
+        else if (priceRange === 'mid' && prodPrice >= 500 && prodPrice <= 2000) priceMatch = true;
+        else if (priceRange === 'high' && prodPrice > 2000) priceMatch = true;
+
+        if (categoryMatch && priceMatch) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    function buyProduct(button) {
+      const productName = button.closest('.product-card').dataset.name;
+      alert(`🛒 "${productName}" has been added to your cart!`);
+    }
+  </script>
+
+</body>
+
+</html>
